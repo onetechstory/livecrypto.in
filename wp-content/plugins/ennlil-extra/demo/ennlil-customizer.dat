@@ -1,0 +1,85 @@
+a:4:{s:8:"template";s:6:"ennlil";s:4:"mods";a:3:{i:0;b:0;s:18:"nav_menu_locations";a:3:{s:7:"primary";i:10;s:10:"footermenu";i:24;s:7:"topmenu";i:31;}s:18:"custom_css_post_id";i:621;}s:7:"options";a:48:{s:9:"site_icon";s:3:"590";s:49:"ennlil_customize_options[_nonce-theme_settings-1]";s:0:"";s:42:"ennlil_customize_options[theme_color_type]";s:14:"gradient-color";s:38:"ennlil_customize_options[gradient_one]";s:7:"#C6005F";s:38:"ennlil_customize_options[gradient_two]";s:7:"#4D0270";s:42:"ennlil_customize_options[theme_main_color]";s:7:"#C20160";s:44:"ennlil_customize_options[theme_second_color]";s:7:"#C20160";s:47:"ennlil_customize_options[theme_btn_hover_color]";s:7:"#000000";s:39:"ennlil_customize_options[theme_body_bg]";s:4:"#fff";s:41:"ennlil_customize_options[theme_body_text]";s:7:"#574F63";s:38:"ennlil_customize_options[preloader_bg]";s:7:"#001737";s:37:"ennlil_customize_options[back_btn_bg]";s:7:"#f06544";s:41:"ennlil_customize_options[back_btn_bg_hvr]";s:7:"#001737";s:50:"ennlil_customize_options[_nonce-theme_settings-13]";s:0:"";s:36:"ennlil_customize_options[top_bar_bg]";s:7:"#002584";s:39:"ennlil_customize_options[top_gr_bg_one]";s:7:"#c6005f";s:39:"ennlil_customize_options[top_gr_bg_two]";s:7:"#4d0270";s:40:"ennlil_customize_options[top_bar_bg_two]";s:7:"#002584";s:43:"ennlil_customize_options[breaking_color_bg]";s:7:"#C20160";s:45:"ennlil_customize_options[breaking_color_text]";s:4:"#fff";s:38:"ennlil_customize_options[top_bar_date]";s:4:"#fff";s:38:"ennlil_customize_options[top_bar_icon]";s:7:"#000000";s:46:"ennlil_customize_options[top_bar_search_color]";s:4:"#fff";s:45:"ennlil_customize_options[header_btn_color_bg]";s:7:"#C20160";s:46:"ennlil_customize_options[header_btn_color_hvr]";s:7:"#002584";s:46:"ennlil_customize_options[header_btn_color_txt]";s:4:"#fff";s:50:"ennlil_customize_options[_nonce-theme_settings-26]";s:0:"";s:36:"ennlil_customize_options[nav_bg_one]";s:7:"#c6005f";s:36:"ennlil_customize_options[nav_bg_two]";s:7:"#4d0270";s:34:"ennlil_customize_options[nav_text]";s:7:"#001737";s:40:"ennlil_customize_options[nav_text_hover]";s:7:"#c20160";s:50:"ennlil_customize_options[_nonce-theme_settings-31]";s:0:"";s:46:"ennlil_customize_options[dropdown_menu_bar_bg]";s:7:"#001737";s:39:"ennlil_customize_options[nav_drop_text]";s:4:"#fff";s:45:"ennlil_customize_options[nav_drop_hover_text]";s:4:"#fff";s:46:"ennlil_customize_options[dropnav_border_color]";s:7:"#10264a";s:50:"ennlil_customize_options[_nonce-theme_settings-36]";s:0:"";s:44:"ennlil_customize_options[mobile_menu_bar_bg]";s:7:"#C20160";s:40:"ennlil_customize_options[mobile_menu_bg]";s:7:"#001737";s:44:"ennlil_customize_options[mobile_menu_bg_hvr]";s:7:"#C20160";s:50:"ennlil_customize_options[_nonce-theme_settings-40]";s:0:"";s:35:"ennlil_customize_options[footer_bg]";s:7:"#F1F4F7";s:44:"ennlil_customize_options[footer_title_color]";s:7:"#4A4A4A";s:43:"ennlil_customize_options[footer_text_color]";s:7:"#8F8F8F";s:43:"ennlil_customize_options[footer_link_color]";s:4:"#fff";s:49:"ennlil_customize_options[copyright_area_bg_color]";s:7:"#F1F4F7";s:45:"ennlil_customize_options[footer_cright_color]";s:7:"#8F8F8F";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:1583:".home-two-tabbli .theme_post_list_tab__wrapper {
+    padding: 50px 50px 70px;
+}
+
+.nav-wrapp-three .mainmenu li ul.sub-menu li ul.sub-menu li a {
+    border-bottom: 1px solid #10264a!important;
+}
+
+.nav-wrapp-three .mainmenu li ul.sub-menu li:last-child ul.sub-menu li a {
+    border-bottom: 1px solid #10264a!important;
+}
+
+.mainmenu li ul li a {
+	font-size: 14px;
+}
+
+@media (max-width: 767px) {
+.theme_single_blog_banner__Center .full-width-captions {
+    left: auto;
+}
+	.footer-widget .textwidget img.foooter-img {
+    max-width: 140px!important;
+}
+	
+}
+
+.home-cat-list .theme_cat_img_List .theme_img_cat_item_List li {
+    margin-right: 19.8px;
+}
+
+body.page-template-default .apsc-theme-4 .apsc-each-profile a, body.elementor-page .apsc-theme-4 .apsc-each-profile a {
+    width: 154px;
+    padding: 12px 17px;
+}
+
+
+
+@media (max-width: 767px) {
+body.page-template-default .apsc-theme-4 .apsc-each-profile a, body.elementor-page .apsc-theme-4 .apsc-each-profile a {
+    width: 100%;
+}
+
+}
+
+
+
+/*** CUSTOM CSS ***/
+
+/*** Main demo Custom CSS ***/
+.weekend-top .owl-nav > div:hover {
+    background: #001737!important;
+}
+
+.footer-widget ul, .footer-widget ul li a {
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.theme_post_list_tab__wrapper .post_tab_list__Content h3 {
+    color: #001737;
+}
+
+
+.home-blog-tab-right .wpt_widget_content .wpt-postmeta {
+    display: none;
+}
+
+.post_list_tab_all_Button {
+    display: none;
+}
+
+.blog_layout_one_Top.home_style_single {
+    padding-top: 95px!important;
+    margin-top: -37px!important;
+}
+
+.subscribe-text h3 {
+    font-family: 'Mulish';
+}
+
+
+
+
+
+";}

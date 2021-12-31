@@ -1,0 +1,147 @@
+/*
+Theme Name: Ennlil Child
+Template:   ennlil
+Theme URI: http://gossipthemes.com/ennlil
+Author: Gossip Themes
+Author URI: http://gossipthemes.com.com
+Description: Make your modifications to Ennlil in this child theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: ennlil-child
+Tags: two-columns, three-columns, four-columns, right-sidebar, custom-menu, featured-images, full-width-template
+*/
+
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+.home-two-tabbli .theme_post_list_tab__wrapper {
+    padding: 50px 50px 70px;
+}
+
+.nav-wrapp-three .mainmenu li ul.sub-menu li ul.sub-menu li a {
+    border-bottom: 1px solid #10264a!important;
+}
+
+.nav-wrapp-three .mainmenu li ul.sub-menu li:last-child ul.sub-menu li a {
+    border-bottom: 1px solid #10264a!important;
+}
+
+.mainmenu li ul li a {
+	font-size: 14px;
+}
+
+@media (max-width: 767px) {
+	.theme_single_blog_banner__Center .full-width-captions {
+		left: auto;
+	}
+	.footer-widget .textwidget img.foooter-img {
+		max-width: 140px!important;
+	}	
+}
+
+.home-cat-list .theme_cat_img_List .theme_img_cat_item_List li {
+    margin-right: 19.8px;
+}
+
+body.page-template-default .apsc-theme-4 .apsc-each-profile a, 
+body.elementor-page .apsc-theme-4 .apsc-each-profile a {
+    width: 154px;
+    padding: 12px 17px;
+}
+
+
+
+@media (max-width: 767px) {
+	body.page-template-default .apsc-theme-4 .apsc-each-profile a, 
+	body.elementor-page .apsc-theme-4 .apsc-each-profile a {
+    	width: 100%;
+	}
+}
+
+/*** CUSTOM CSS ***/
+
+/*** Main demo Custom CSS ***/
+.weekend-top .owl-nav > div:hover {
+    background: #001737!important;
+}
+
+.footer-widget ul, .footer-widget ul li a {
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.theme_post_list_tab__wrapper .post_tab_list__Content h3 {
+    color: #001737;
+}
+
+
+.home-blog-tab-right .wpt_widget_content .wpt-postmeta {
+    display: none;
+}
+
+.post_list_tab_all_Button {
+    display: none;
+}
+
+.blog_layout_one_Top.home_style_single {
+    padding-top: 95px!important;
+    margin-top: -37px!important;
+}
+
+.subscribe-text h3 {
+    font-family: 'Mulish';
+}
+
+#contact-us label {
+	font-size: 18px;
+	font-weight: bold;
+	width: 100%;
+}
+
+#contact-us span input, textarea {
+	border-radius: 10px;
+	border: 2px solid #000;
+	padding: 10px;
+	width: 80%;
+}
+
+#contact-us input[type='checkbox'] {
+	width: auto;
+}
+
+#contact-us input[type='submit'] {
+	padding: 10px;
+	width: 100px;
+	font-size: 18px;
+	background: #fff;
+	border-radius: 10px;
+	border: 2px solid #000;
+	cursor: pointer;
+}
+
+#contact-us p small {
+	color: red;
+}
+
+.theme_header_design__One {
+    background-image: linear-gradient(90deg, #3abdca 0%, #4D0270 100%);
+}
+
+@media (min-width: 1025px){
+	.site-navigation.sticky {
+    	background-image: linear-gradient(90deg, #3abdca 0%, #4D0270 100%);
+	}
+}
+
+body.dark-mode .post-layout-style2 .single-blog-content .entry-content h2,
+body.dark-mode .post-layout-style2 .single-blog-content .entry-content ol li,
+body.dark-mode .post-layout-style2 .single-blog-content .entry-content ol li strong,
+body.dark-mode .footer-widget.widget_text .textwidget p{
+	color: #ffffff;
+}
+
+blockquote cite, .blockquote cite {
+	display: block;
+}

@@ -1,0 +1,74 @@
+
+
+05-20-2021 @ 16:07:14 - Facebook Instant Posting | post | 1478
+Facebook posting begins with feed method.
+Facebook API Method: appmethod
+Facebook post data : array (
+  'picture' => 'https://livecrypto.in/wp-content/uploads/2021/05/neonbrand-Cmz06-0btw-unsplash.jpg',
+  'message' => 'Top 5 mistakes I Made In Crypto
+#Cryptocurrency #Top5mistakes #livecrypto',
+  'link' => 'https://bit.ly/346n6fH',
+  'name' => 'Top 5 mistakes I Made In Crypto',
+  'description' => '
+Today, we are going to talk about the top 5 mistakes I made when I began trading cryptocurrency and I see many newbies making the same mistakes. So I wanted to share these mistakes we all make and you can decide and fix these issues to avoid going into losses.
+
+
+
+1. Selecting An Crypto Exchange
+
+
+
+
+
+
+
+This is the most basic mistake which I made, I downloaded a single exchange and started trading on it. I was not aware of other exchanges, so I was not aware that other exchanges were charging less trading fees and more coins to buy. So, I would suggest trying most of the exchanges available keep checking and researching, and find which exchange is best for you. Try Indian and international exchanges and find out which one has more features and then you can have the best exchange which suits you. There are many issues with withdrawal/deposit on Indian exchanges also there is a lot of price difference of coins on some exchanges, so choose the right one that suits you.
+
+
+
+2. Setting Targets
+
+
+
+So this is a huge mistake I made while trading crypto, I bought certain coins and never set any targets which meant I was not sure when to close the order and make profits, this made to go through some losses as coins that reach a certain high I never sold them and booked profits. Thankfully I learned from these issues and I always set targets for all my orders.
+
+
+
+3. Do Your Research
+
+
+
+This is a mistake that I see most these days with many airdrops, telegram channels, and other YouTubers asking you to buy a coin that does not have any value. So, please always do your research look for the coin is listed on Coinmarketcap, if it’s not listed on there most of the time it’s a scam. Similarly airdrops and other mining apps please do a google search or check if these guys are on Twitter and check for authenticity. Spending a little time researching will save you time and money in the long run.
+
+
+
+4. Be Aware Of Scammers
+
+
+
+
+
+
+
+Always be aware of scammers and do not provide your wallet passwords to anyone on the internet. I have seen several such cases where people are scammed after providing them good offers. Never believe anyone on the internet and provides any information about wallets etc. . Remember nobody in the world provides anything for free.
+
+
+
+5. Emotional Trading
+
+
+
+I think this is a mistake we all make in trading crypto, FOMO is one of the major reasons people are missing out on profits. Taking an example of Dogecoin many of us have bought the coin going by the hype and most of the time the coin dumps and huge losses are suffered by many of us. So, keep your emotions in check and always do not forget to make your profits.
+
+
+
+To conclude, please take all the precautions along with my Top 5 mistakes while trading and do your research, as it goes a long way. 
+
+
+
+Happy trading!
+',
+  'access_token' => '',
+)
+Facebook posted to user ID : 101706008761063|10226123487172038 | Response ID 101706008761063_113382470926750
+Facebook posting completed successfully.
