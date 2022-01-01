@@ -20,7 +20,9 @@ class WorkersFactory {
   /** @var ContainerWrapper */
   private $container;
 
-  public function __construct(ContainerWrapper $container) {
+  public function __construct(
+    ContainerWrapper $container
+  ) {
     $this->container = $container;
   }
 
@@ -99,6 +101,11 @@ class WorkersFactory {
     return $this->container->get(SubscribersEngagementScore::class);
   }
 
+  /** @return SubscribersLastEngagement */
+  public function createSubscribersLastEngagementWorker() {
+    return $this->container->get(SubscribersLastEngagement::class);
+  }
+
   /** @return AuthorizedSendingEmailsCheck */
   public function createAuthorizedSendingEmailsCheckWorker() {
     return $this->container->get(AuthorizedSendingEmailsCheck::class);
@@ -112,5 +119,20 @@ class WorkersFactory {
   /** @return SubscribersCountCacheRecalculation */
   public function createSubscribersCountCacheRecalculationWorker() {
     return $this->container->get(SubscribersCountCacheRecalculation::class);
+  }
+
+  /** @return ReEngagementEmailsScheduler */
+  public function createReEngagementEmailsSchedulerWorker() {
+    return $this->container->get(ReEngagementEmailsScheduler::class);
+  }
+
+  /** @return SubscribersStatsReport */
+  public function createSubscribersStatsReportWorker() {
+    return $this->container->get(SubscribersStatsReport::class);
+  }
+
+  /** @return NewsletterTemplateThumbnails */
+  public function createNewsletterTemplateThumbnailsWorker() {
+    return $this->container->get(NewsletterTemplateThumbnails::class);
   }
 }

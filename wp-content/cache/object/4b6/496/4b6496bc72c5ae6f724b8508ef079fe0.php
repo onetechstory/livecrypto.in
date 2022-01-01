@@ -1,1 +1,0 @@
--DÍa<?php exit; ?>a:1:{s:7:"content";s:40:"{"good":16,"recommended":2,"critical":1}";}

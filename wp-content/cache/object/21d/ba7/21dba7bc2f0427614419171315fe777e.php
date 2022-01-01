@@ -1,4 +1,4 @@
-³þÍa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1434";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-09 11:45:06";s:13:"post_date_gmt";s:19:"2021-05-09 11:45:06";s:12:"post_content";s:3406:"<!-- wp:paragraph -->
+µôÏa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1434";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-09 11:45:06";s:13:"post_date_gmt";s:19:"2021-05-09 11:45:06";s:12:"post_content";s:3406:"<!-- wp:paragraph -->
 <p>Basically, Altcoins means "Alternate Coins" meaning other coins than more established and famous coin <a href="https://livecrypto.in/bitcoin-what-you-need-to-know-before-you-buy/" target="_blank" rel="noreferrer noopener">Bitcoin</a>. This term is used by Cryptizens to address the other coins which are taking up the crypto market by storm. So, the number of Altcoins in the market is more than 900 as we speak and are growing at an impressive rate.</p>
 <!-- /wp:paragraph -->
 

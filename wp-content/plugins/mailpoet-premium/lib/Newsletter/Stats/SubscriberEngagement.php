@@ -13,6 +13,7 @@ use MailPoet\Entities\StatisticsNewsletterEntity;
 use MailPoet\Entities\StatisticsOpenEntity;
 use MailPoet\Entities\StatisticsUnsubscribeEntity;
 use MailPoet\Entities\SubscriberEntity;
+use MailPoet\Entities\UserAgentEntity;
 use MailPoet\Listing;
 use MailPoet\Newsletter\NewslettersRepository;
 use MailPoet\Premium\Newsletter\StatisticsClicksRepository;
@@ -24,6 +25,7 @@ use MailPoetVendor\Doctrine\ORM\EntityManager;
 
 class SubscriberEngagement {
   const STATUS_OPENED = 'opened';
+  const STATUS_MACHINE_OPENED = 'machine-opened';
   const STATUS_CLICKED = 'clicked';
   const STATUS_UNSUBSCRIBED = 'unsubscribed';
   const STATUS_UNOPENED = 'unopened';
@@ -104,8 +106,7 @@ class SubscriberEngagement {
     $countQuery = $this->getStatsQuery($definition, true);
     if ($countQuery) {
       $query = 'SELECT COUNT(*) as cnt FROM ( ' . $countQuery . ' ) t ';
-      $countData = $this->entityManager->getConnection()->executeQuery($query)->fetch();
-      $count = (int)$countData['cnt'];
+      $count = (int)$this->entityManager->getConnection()->executeQuery($query)->fetchOne();
 
       $statsQuery = $this->getStatsQuery($definition);
       $query = $statsQuery . " ORDER BY {$definition->getSortBy()} {$definition->getSortOrder()} LIMIT :limit OFFSET :offset ";
@@ -119,7 +120,7 @@ class SubscriberEngagement {
           'limit' => \PDO::PARAM_INT,
           'offset' => \PDO::PARAM_INT,
         ])
-        ->fetchAll();
+        ->fetchAllAssociative();
     } else {
       $count = 0;
       $items = [];
@@ -169,7 +170,25 @@ class SubscriberEngagement {
       . self::getColumnList($fields, $count) . ' '
       . 'FROM ' . $opensTable . ' opens '
       . 'LEFT JOIN ' . $subscriberTable . ' subscribers ON subscribers.id = opens.subscriber_id '
-      . 'WHERE opens.newsletter_id = "' . $newsletterId . '" ' . $searchConstraint . ') ';
+      . 'WHERE opens.newsletter_id = "' . $newsletterId . '" ' . $searchConstraint . ' '
+      . 'AND opens.user_agent_type = "' . UserAgentEntity::USER_AGENT_TYPE_HUMAN . '") ';
+
+    $fields = [
+      'opens.id',
+      'opens.subscriber_id',
+      '"' . self::STATUS_MACHINE_OPENED . '" as status',
+      'opens.created_at',
+      'subscribers.email',
+      'subscribers.first_name',
+      'subscribers.last_name',
+    ];
+
+    $queries[self::STATUS_MACHINE_OPENED] = '(SELECT '
+      . self::getColumnList($fields, $count) . ' '
+      . 'FROM ' . $opensTable . ' opens '
+      . 'LEFT JOIN ' . $subscriberTable . ' subscribers ON subscribers.id = opens.subscriber_id '
+      . 'WHERE opens.newsletter_id = "' . $newsletterId . '" ' . $searchConstraint . ' '
+      . 'AND opens.user_agent_type = "' . UserAgentEntity::USER_AGENT_TYPE_MACHINE . '") ';
 
     $fields = [
       'clicks.id',
@@ -230,6 +249,7 @@ class SubscriberEngagement {
         ' UNION ALL ',
         [
           $queries[self::STATUS_OPENED],
+          $queries[self::STATUS_MACHINE_OPENED],
           $queries[self::STATUS_CLICKED],
           $queries[self::STATUS_UNSUBSCRIBED],
         ]
@@ -342,17 +362,22 @@ class SubscriberEngagement {
       [
         'name' => self::STATUS_CLICKED,
         'label' => WPFunctions::get()->_x('Clicked', 'Subscriber engagement filter - filter those who clicked on a newsletter link', 'mailpoet-premium'),
-        'count' => count($this->statisticsClicksRepository->findBy(['newsletter' => $newsletter])),
+        'count' => $this->statisticsClicksRepository->countBy(['newsletter' => $newsletter]),
       ],
       [
         'name' => self::STATUS_OPENED,
         'label' => WPFunctions::get()->_x('Opened', 'Subscriber engagement filter - filter those who opened a newsletter', 'mailpoet-premium'),
-        'count' => count($this->statisticsOpensRepository->findBy(['newsletter' => $newsletter])),
+        'count' => $this->statisticsOpensRepository->countBy(['newsletter' => $newsletter, 'userAgentType' => UserAgentEntity::USER_AGENT_TYPE_HUMAN]),
+      ],
+      [
+        'name' => self::STATUS_MACHINE_OPENED,
+        'label' => WPFunctions::get()->_x('Machine-opened', 'Subscriber engagement filter - shows machine-opens for a given newsletter', 'mailpoet-premium'),
+        'count' => $this->statisticsOpensRepository->countBy(['newsletter' => $newsletter, 'userAgentType' => UserAgentEntity::USER_AGENT_TYPE_MACHINE]),
       ],
       [
         'name' => self::STATUS_UNSUBSCRIBED,
         'label' => WPFunctions::get()->_x('Unsubscribed', 'Subscriber engagement filter - filter those who unsubscribed from a newsletter', 'mailpoet-premium'),
-        'count' => count($this->statisticsUnsubscribesRepository->findBy(['newsletter' => $newsletter])),
+        'count' => $this->statisticsUnsubscribesRepository->countBy(['newsletter' => $newsletter]),
       ],
     ];
 
@@ -367,8 +392,7 @@ class SubscriberEngagement {
 
     $subQuery = $this->getStatsQuery($definition, true, self::STATUS_UNOPENED, false);
     $query = ' SELECT COUNT(*) as cnt FROM ( ' . $subQuery . ' ) t ';
-    $unopenedCount = $this->entityManager->getConnection()->executeQuery($query)->fetch();
-    $unopenedCount = (int)$unopenedCount['cnt'];
+    $unopenedCount = (int)$this->entityManager->getConnection()->executeQuery($query)->fetchOne();
 
     $groups[] = [
       'name' => self::STATUS_UNOPENED,

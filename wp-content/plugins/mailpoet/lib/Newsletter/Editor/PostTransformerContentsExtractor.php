@@ -19,7 +19,9 @@ class PostTransformerContentsExtractor {
   /** @var WooCommerceHelper */
   private $woocommerceHelper;
 
-  public function __construct($args) {
+  public function __construct(
+    $args
+  ) {
     $this->args = $args;
     $this->wp = new WPFunctions();
     $this->woocommerceHelper = new WooCommerceHelper();
@@ -134,7 +136,7 @@ class PostTransformerContentsExtractor {
   }
 
   public function getTitle($post) {
-    $title = $this->sanitizeTitle($post->post_title); // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
+    $title = $post->post_title; // phpcs:ignore Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
 
     if (filter_var($this->args['titleIsLink'], FILTER_VALIDATE_BOOLEAN)) {
       $title = '<a href="' . $this->wp->getPermalink($post->ID) . '">' . $title . '</a>';

@@ -1,4 +1,4 @@
-_ Õa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1496";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-08-18 02:30:00";s:13:"post_date_gmt";s:19:"2021-08-18 02:30:00";s:12:"post_content";s:4200:"<!-- wp:paragraph -->
+µÙœa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1496";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-08-18 02:30:00";s:13:"post_date_gmt";s:19:"2021-08-18 02:30:00";s:12:"post_content";s:4200:"<!-- wp:paragraph -->
 <p>Back in 2020, it was all about the entire <a href="https://livecrypto.in/blockchain-what-is-blockchain-how-does-it-work/" target="_blank" rel="noreferrer noopener">Blockchain</a> Industry Vs US Government. It was not just about XRP fighting the case, it was the whole <a href="https://livecrypto.in/what-is-cryptocurrency-can-it-be-used-as-a-replacement-for-physical-currency/" target="_blank" rel="noreferrer noopener">cryptocurrency</a> industry fighting for their existence.</p>
 <!-- /wp:paragraph -->
 

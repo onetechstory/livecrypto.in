@@ -1,4 +1,4 @@
-8çŒa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1380";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-05-09 11:32:55";s:13:"post_date_gmt";s:19:"2021-05-09 11:32:55";s:12:"post_content";s:8745:"<!-- wp:paragraph -->
+µÙœa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1380";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-05-09 11:32:55";s:13:"post_date_gmt";s:19:"2021-05-09 11:32:55";s:12:"post_content";s:8745:"<!-- wp:paragraph -->
 <p>The cryptocurrency terminologies help understand the newbie investor, the basic industry terminology. As this asset class is newer compared to the traditional assets out in the market, doing one's homework is very important.</p>
 <!-- /wp:paragraph -->
 

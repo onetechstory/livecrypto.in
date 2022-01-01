@@ -1,4 +1,4 @@
-_ Õa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1346";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-05-05 18:32:39";s:13:"post_date_gmt";s:19:"2021-05-05 18:32:39";s:12:"post_content";s:4804:"<!-- wp:paragraph -->
+µÙœa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1346";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-05-05 18:32:39";s:13:"post_date_gmt";s:19:"2021-05-05 18:32:39";s:12:"post_content";s:4804:"<!-- wp:paragraph -->
 <p>Bitcoin is a digital currency introduced in 2009. Introduced by pseudonymous and mysterious <a href="https://en.wikipedia.org/wiki/Satoshi_Nakamoto" target="_blank" rel="noreferrer noopener">Satoshi Nakamoto</a>. Bitcoin has no physical presence and is only kept on a public ledger that is transparent and accessible to everyone. It is the most popular and has triggered the launch of many other <a href="https://livecrypto.in/what-is-cryptocurrency-can-it-be-used-as-a-replacement-for-physical-currency/" target="_blank" rel="noreferrer noopener">cryptocurrencies</a>.</p>
 <!-- /wp:paragraph -->
 

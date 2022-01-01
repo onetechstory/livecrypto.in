@@ -1,5 +1,5 @@
 <?php exit; ?>{
-    "version": "2.1.6",
+    "version": "2.2.1",
     "cluster.messagebus.debug": false,
     "cluster.messagebus.enabled": false,
     "cluster.messagebus.sns.region": "",
@@ -60,6 +60,7 @@
     ],
     "docroot_fix.enable": false,
     "lazyload.enabled": false,
+    "lazyload.threshold": "",
     "lazyload.process_img": true,
     "lazyload.process_background": true,
     "lazyload.googlemaps.google_maps_easy": false,
@@ -908,6 +909,10 @@
     "plugin.license_key": "",
     "plugin.type": "",
     "jquerymigrate.disabled": false,
+    "imageservice": {
+        "compression": "lossy",
+        "auto": "enabled"
+    },
     "lazyload_process_background": true,
     "fragmentcache": {
         "engine": "file"

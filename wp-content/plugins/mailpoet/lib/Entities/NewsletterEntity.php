@@ -31,6 +31,7 @@ class NewsletterEntity {
   const TYPE_NOTIFICATION = 'notification';
   const TYPE_NOTIFICATION_HISTORY = 'notification_history';
   const TYPE_WC_TRANSACTIONAL_EMAIL = 'wc_transactional';
+  const TYPE_RE_ENGAGEMENT = 're_engagement';
 
   // standard newsletters
   const STATUS_DRAFT = 'draft';
@@ -421,6 +422,16 @@ class NewsletterEntity {
   }
 
   /**
+   * @return int[]
+   */
+  public function getSegmentIds() {
+    return array_filter($this->newsletterSegments->map(function(NewsletterSegmentEntity $newsletterSegment) {
+      $segment = $newsletterSegment->getSegment();
+      return $segment ? (int)$segment->getId() : null;
+    })->toArray());
+  }
+
+  /**
    * @return ArrayCollection<int, NewsletterOptionEntity>
    */
   public function getOptions() {
@@ -446,12 +457,16 @@ class NewsletterEntity {
     return $this->queues;
   }
 
-  /**
-   * @return SendingQueueEntity|null
-   */
-  public function getLatestQueue() {
+  public function getLatestQueue(): ?SendingQueueEntity {
     $criteria = new Criteria();
     $criteria->orderBy(['id' => Criteria::DESC]);
+    $criteria->setMaxResults(1);
+    return $this->queues->matching($criteria)->first() ?: null;
+  }
+
+  public function getLastUpdatedQueue(): ?SendingQueueEntity {
+    $criteria = new Criteria();
+    $criteria->orderBy(['updatedAt' => Criteria::DESC]);
     $criteria->setMaxResults(1);
     return $this->queues->matching($criteria)->first() ?: null;
   }
@@ -472,5 +487,32 @@ class NewsletterEntity {
       return null;
     }
     return $body['globalStyles'][$category][$style] ?? null;
+  }
+
+  public function getProcessedAt(): ?DateTimeInterface {
+    $processedAt = null;
+    $queue = $this->getLatestQueue();
+
+    if ($queue instanceof SendingQueueEntity) {
+      $task = $queue->getTask();
+
+      if ($task instanceof ScheduledTaskEntity) {
+        $processedAt = $task->getProcessedAt();
+      }
+    }
+
+    return $processedAt;
+  }
+
+  public function getContent(): string {
+    $content = $this->getBody()['content'] ?? '';
+    return json_encode($content) ?: '';
+  }
+
+  /**
+   * Only some types of newsletters can be set as sent. Some others are just active or draft.
+   */
+  public function canBeSetSent(): bool {
+    return in_array($this->getType(), [self::TYPE_NOTIFICATION_HISTORY, self::TYPE_STANDARD], true);
   }
 }

@@ -1,4 +1,4 @@
-³þÍa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1360";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-06 07:24:06";s:13:"post_date_gmt";s:19:"2021-05-06 07:24:06";s:12:"post_content";s:3641:"<!-- wp:paragraph -->
+µôÏa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1360";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-06 07:24:06";s:13:"post_date_gmt";s:19:"2021-05-06 07:24:06";s:12:"post_content";s:3641:"<!-- wp:paragraph -->
 <p>Ever wondered how Ethereum came out of nowhere and became the second-largest <a href="https://livecrypto.in/what-is-cryptocurrency-can-it-be-used-as-a-replacement-for-physical-currency/" target="_blank" rel="noreferrer noopener">cryptocurrency</a> and now following the footsteps of Bitcoin to become a market giant. We have tried to answer the questions in this post.</p>
 <!-- /wp:paragraph -->
 

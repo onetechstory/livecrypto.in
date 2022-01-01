@@ -1,4 +1,4 @@
-_ Õa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1513";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-08-14 08:59:24";s:13:"post_date_gmt";s:19:"2021-08-14 08:59:24";s:12:"post_content";s:4008:"<!-- wp:paragraph -->
+µÙœa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1513";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-08-14 08:59:24";s:13:"post_date_gmt";s:19:"2021-08-14 08:59:24";s:12:"post_content";s:4008:"<!-- wp:paragraph -->
 <p>Have you heard about "Contracts?" No, not the paper contracts that you have come across. Neither they're those traditional ones that are signed between two entities. As the name suggests, "Smart Contracts", tend to have that smartness.</p>
 <!-- /wp:paragraph -->
 

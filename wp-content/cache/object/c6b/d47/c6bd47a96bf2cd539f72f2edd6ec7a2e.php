@@ -1,4 +1,4 @@
-_ Õa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1370";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-05-09 07:34:15";s:13:"post_date_gmt";s:19:"2021-05-09 07:34:15";s:12:"post_content";s:4071:"<!-- wp:paragraph -->
+µÙœa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1370";s:11:"post_author";s:1:"3";s:9:"post_date";s:19:"2021-05-09 07:34:15";s:13:"post_date_gmt";s:19:"2021-05-09 07:34:15";s:12:"post_content";s:4071:"<!-- wp:paragraph -->
 <p>Investing in <a href="https://livecrypto.in/what-is-cryptocurrency-can-it-be-used-as-a-replacement-for-physical-currency/" target="_blank" rel="noreferrer noopener">Cryptocurrencies</a> has always been a hot topic debated across the world. Several questions arise for an underdog investor. How to invest in cryptocurrency? Is cryptocurrency in India legal? And many more. </p>
 <!-- /wp:paragraph -->
 

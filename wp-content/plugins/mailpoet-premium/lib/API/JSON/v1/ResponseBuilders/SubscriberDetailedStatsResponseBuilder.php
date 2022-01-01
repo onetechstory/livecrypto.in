@@ -9,6 +9,7 @@ use MailPoet\Entities\NewsletterEntity;
 use MailPoet\Entities\NewsletterLinkEntity;
 use MailPoet\Entities\StatisticsClickEntity;
 use MailPoet\Entities\StatisticsOpenEntity;
+use MailPoet\Entities\UserAgentEntity;
 use MailPoet\Newsletter\Url as NewsletterUrl;
 use MailPoet\Premium\Subscriber\Stats\SubscriberNewsletterStats;
 use MailPoet\WooCommerce\Helper as WCHelper;
@@ -88,7 +89,7 @@ class SubscriberDetailedStatsResponseBuilder {
   private function buildOpen(StatisticsOpenEntity $open): array {
     return [
       'id' => $open->getId(),
-      'type' => 'open',
+      'type' => $open->getUserAgentType() === UserAgentEntity::USER_AGENT_TYPE_MACHINE ? 'machine-open' : 'open',
       'created_at' => $open->getCreatedAt()->format(self::DATE_FORMAT),
     ];
   }

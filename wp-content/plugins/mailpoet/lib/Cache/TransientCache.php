@@ -15,13 +15,15 @@ class TransientCache {
   /** @var WPFunctions */
   private $wp;
 
-  public function __construct(WPFunctions $wp) {
+  public function __construct(
+    WPFunctions $wp
+  ) {
     $this->wp = $wp;
   }
 
   public function getItem(string $key, int $id): ?array {
     $items = $this->getItems($key);
-    return $items[$id]['item'] ?? null;
+    return $items[$id] ?? null;
   }
 
   public function getOldestCreatedAt(string $key): ?\DateTime {

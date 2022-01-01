@@ -12,6 +12,7 @@ use MailPoet\Models\Subscriber;
 use MailPoet\Models\SubscriberSegment;
 use MailPoet\Newsletter\Scheduler\WelcomeScheduler;
 use MailPoet\Settings\SettingsController;
+use MailPoet\Settings\TrackingConfig;
 use MailPoet\Statistics\Track\Unsubscribes;
 use MailPoet\Subscribers\LinkTokens;
 use MailPoet\Subscribers\NewSubscriberNotificationMailer;
@@ -27,6 +28,7 @@ class Pages {
   const ACTION_CONFIRM_UNSUBSCRIBE = 'confirm_unsubscribe';
   const ACTION_MANAGE = 'manage';
   const ACTION_UNSUBSCRIBE = 'unsubscribe';
+  const ACTION_RE_ENGAGEMENT = 're_engagement';
 
   private $action;
   private $data;
@@ -68,6 +70,9 @@ class Pages {
   /** @var SubscribersRepository */
   private $subscribersRepository;
 
+  /** @var TrackingConfig */
+  private $trackingConfig;
+
   public function __construct(
     NewSubscriberNotificationMailer $newSubscriberNotificationSender,
     WPFunctions $wp,
@@ -80,7 +85,8 @@ class Pages {
     TemplateRenderer $templateRenderer,
     Unsubscribes $unsubscribesTracker,
     ManageSubscriptionFormRenderer $manageSubscriptionFormRenderer,
-    SubscribersRepository $subscribersRepository
+    SubscribersRepository $subscribersRepository,
+    TrackingConfig $trackingConfig
   ) {
     $this->wp = $wp;
     $this->newSubscriberNotificationSender = $newSubscriberNotificationSender;
@@ -94,6 +100,7 @@ class Pages {
     $this->unsubscribesTracker = $unsubscribesTracker;
     $this->manageSubscriptionFormRenderer = $manageSubscriptionFormRenderer;
     $this->subscribersRepository = $subscribersRepository;
+    $this->trackingConfig = $trackingConfig;
   }
 
   public function init($action = false, $data = [], $initShortcodes = false, $initPageFilters = false) {
@@ -196,7 +203,7 @@ class Pages {
       && ($this->subscriber !== null)
       && ($this->subscriber->status !== Subscriber::STATUS_UNSUBSCRIBED)
     ) {
-      if ((bool)$this->settings->get('tracking.enabled') && isset($this->data['queueId'])) {
+      if ($this->trackingConfig->isEmailTrackingEnabled() && isset($this->data['queueId'])) {
         $this->unsubscribesTracker->track(
           (int)$this->subscriber->id,
           StatisticsUnsubscribeEntity::SOURCE_NEWSLETTER,
@@ -242,6 +249,9 @@ class Pages {
 
         case self::ACTION_UNSUBSCRIBE:
           return $this->getUnsubscribeTitle();
+
+        case self::ACTION_RE_ENGAGEMENT:
+          return $this->getReEngagementTitle();
       }
     }
   }
@@ -274,6 +284,9 @@ class Pages {
           break;
         case self::ACTION_UNSUBSCRIBE:
           $content = $this->getUnsubscribeContent();
+          break;
+        case self::ACTION_RE_ENGAGEMENT:
+          $content = $this->getReEngagementContent();
           break;
       }
       return str_replace('[mailpoet_page]', trim($content), $pageContent);
@@ -338,6 +351,12 @@ class Pages {
     }
   }
 
+  private function getReEngagementTitle() {
+    if ($this->isPreview() || $this->subscriber !== null) {
+      return __('Thank you for letting us know!', 'mailpoet');
+    }
+  }
+
   private function getConfirmUnsubscribeTitle() {
     if ($this->isPreview() || $this->subscriber !== null) {
       return $this->wp->__('Confirm you want to unsubscribe', 'mailpoet');
@@ -387,12 +406,20 @@ class Pages {
     return $content;
   }
 
+  private function getReEngagementContent() {
+    $content = '';
+    if ($this->isPreview() || $this->subscriber !== null) {
+      $content .= '<p>' . __('We appreciate your continued interest in our updates. Expect to hear from us again soon!', 'mailpoet') . '</p>';
+    }
+    return $content;
+  }
+
   private function getConfirmUnsubscribeContent() {
-    if (!$this->isPreview() && ($this->subscriber === null || $this->subscriber->id === null)) {
+    if (!$this->isPreview() && $this->subscriber === null) {
       return '';
     }
     $queueId = isset($this->data['queueId']) ? (int)$this->data['queueId'] : null;
-    $subscriberEntity = $this->subscribersRepository->findOneById($this->subscriber->id);
+    $subscriberEntity = $this->subscriber ? $this->subscribersRepository->findOneById($this->subscriber->id) : null;
     $unsubscribeUrl = $this->subscriptionUrlFactory->getUnsubscribeUrl($subscriberEntity, $queueId);
     $templateData = [
       'unsubscribeUrl' => $unsubscribeUrl,

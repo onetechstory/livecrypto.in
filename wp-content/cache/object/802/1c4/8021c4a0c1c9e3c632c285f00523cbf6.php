@@ -1,4 +1,4 @@
-8çŒa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1441";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-09 12:00:35";s:13:"post_date_gmt";s:19:"2021-05-09 12:00:35";s:12:"post_content";s:3345:"<!-- wp:paragraph -->
+µÙœa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1441";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-09 12:00:35";s:13:"post_date_gmt";s:19:"2021-05-09 12:00:35";s:12:"post_content";s:3345:"<!-- wp:paragraph -->
 <p>Today, we are going to provide details about a new coin which is deemed to be a new Dogecoin, yes the coin is named after a Japanese dog breed name Shiba Inu. Shiba is all set to be listed on the Huobi <a href="https://livecrypto.in/cryptocurrency-exchanges-and-trading-platforms/" target="_blank" rel="noreferrer noopener">exchange</a>. This coin is being backed by the Asian market and they claim to be the DOGEkiller on their official website.</p>
 <!-- /wp:paragraph -->
 

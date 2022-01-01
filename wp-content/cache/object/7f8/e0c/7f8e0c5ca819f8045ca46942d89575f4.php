@@ -1,4 +1,4 @@
-8çŒa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1478";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-20 07:44:36";s:13:"post_date_gmt";s:19:"2021-05-20 07:44:36";s:12:"post_content";s:4523:"<!-- wp:paragraph -->
+µÙœa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1478";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-20 07:44:36";s:13:"post_date_gmt";s:19:"2021-05-20 07:44:36";s:12:"post_content";s:4523:"<!-- wp:paragraph -->
 <p>Today, we are going to talk about the top 5 mistakes I made when I began trading cryptocurrency and I see many newbies making the same mistakes. So I wanted to share these mistakes we all make and you can decide and fix these issues to avoid going into losses.</p>
 <!-- /wp:paragraph -->
 

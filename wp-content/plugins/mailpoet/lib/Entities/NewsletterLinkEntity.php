@@ -22,6 +22,9 @@ class NewsletterLinkEntity {
   use UpdatedAtTrait;
   use SafeToOneAssociationLoadTrait;
 
+  public const UNSUBSCRIBE_LINK_SHORT_CODE = '[link:subscription_unsubscribe_url]';
+  public const INSTANT_UNSUBSCRIBE_LINK_SHORT_CODE = '[link:subscription_instant_unsubscribe_url]';
+
   /**
    * @ORM\ManyToOne(targetEntity="MailPoet\Entities\NewsletterEntity")
    * @ORM\JoinColumn(name="newsletter_id", referencedColumnName="id")
@@ -57,7 +60,12 @@ class NewsletterLinkEntity {
    */
   private $clicks;
 
-  public function __construct(NewsletterEntity $newsletter, SendingQueueEntity $queue, string $url, string $hash) {
+  public function __construct(
+    NewsletterEntity $newsletter,
+    SendingQueueEntity $queue,
+    string $url,
+    string $hash
+  ) {
     $this->newsletter = $newsletter;
     $this->queue = $queue;
     $this->url = $url;
@@ -93,5 +101,17 @@ class NewsletterLinkEntity {
    */
   public function getTotalClicksCount() {
     return $this->clicks->count();
+  }
+
+  public function toArray(): array {
+    return [
+      'id' => $this->getId(),
+      'newsletter_id' => ($this->getNewsletter() instanceof NewsletterEntity) ? $this->getNewsletter()->getId() : null,
+      'queue_id' => ($this->getQueue() instanceof SendingQueueEntity) ? $this->getQueue()->getId() : null,
+      'url' => $this->getUrl(),
+      'hash' => $this->getHash(),
+      'created_at' => $this->getCreatedAt(),
+      'updated_at' => $this->getUpdatedAt(),
+    ];
   }
 }

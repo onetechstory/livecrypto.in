@@ -1,4 +1,4 @@
-³þÍa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1272";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-03 10:44:48";s:13:"post_date_gmt";s:19:"2021-05-03 10:44:48";s:12:"post_content";s:4502:"<!-- wp:paragraph -->
+µôÏa<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":23:{s:2:"ID";s:4:"1272";s:11:"post_author";s:1:"2";s:9:"post_date";s:19:"2021-05-03 10:44:48";s:13:"post_date_gmt";s:19:"2021-05-03 10:44:48";s:12:"post_content";s:4502:"<!-- wp:paragraph -->
 <p>A cryptocurrency is a digital or virtual currency that is meant to be a medium of <a href="https://livecrypto.in/cryptocurrency-exchanges-and-trading-platforms/" target="_blank" rel="noreferrer noopener">exchange</a>. It is quite similar to real-world currency, except it does not have any physical embodiment, and it uses cryptography to work.</p>
 <!-- /wp:paragraph -->
 
